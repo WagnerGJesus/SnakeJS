@@ -5,3 +5,4 @@ Criando o Jogo da Cobrinha com JavaScript
 - [x] Criar Cobrinha
 - [x] definir movimentos da cobrinha
 - [x] definir direcoes e impedir que a cobrinha suma
+- [x] criar comidinha
