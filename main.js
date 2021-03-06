@@ -70,8 +70,15 @@ function iniciarJogo() {
     default:
       break;
   }
+  if(snakeX != food.x || snakeY != food.y){ 
   //  Remove o último elemento de uma matriz e o retorna. Se a matriz estiver vazia, undefined é retornado e a matriz não é modificada.
+  //aumentando o tamanho da cobrinha
   snake.pop();
+  }else{
+    //alterar a posicao da comida apos colisao
+    food.x = Math.floor(Math.random() * 15 + 1) * box;
+    food.y = Math.floor(Math.random() * 15 + 1) * box;    
+  }
 
   let newHead = {
     x: snakeX,
