@@ -20,7 +20,21 @@ function criarCobrinha() {
   }
 }
 
+document.addEventListener("keydown", update);
+
+function update(event) {
+      if(event.keyCode == 37 && direction != "right") direction = "left";
+      if(event.keyCode == 38 && direction != "down")  direction = "up";
+      if(event.keyCode == 39 && direction != "left") direction = "right";
+      if(event.keyCode == 40 && direction != "up") direction = "down";
+}
+
 function iniciarJogo() {
+  if(snake[0].x > 15 * box &&  direction == "right") snake[0].x = 0;
+  if(snake[0].x < 0 * box &&  direction == "left") snake[0].x = 16 * box;
+  if(snake[0].y > 15 * box &&  direction == "down") snake[0].y = 0;
+  if(snake[0].y < 0 * box &&  direction == "up") snake[0].y = 16 * box;
+
   criarBG();
   criarCobrinha();
 
@@ -39,7 +53,7 @@ function iniciarJogo() {
     case "up":
       snakeY -= box;
       break;
-      
+
     case "down":
       snakeY += box;
       break;
@@ -48,14 +62,14 @@ function iniciarJogo() {
       break;
   }
   //  Remove o último elemento de uma matriz e o retorna. Se a matriz estiver vazia, undefined é retornado e a matriz não é modificada.
-   snake.pop();
+  snake.pop();
 
-   let newHead = {
-     x: snakeX,
-     y: snakeY
-   }
+  let newHead = {
+    x: snakeX,
+    y: snakeY,
+  };
   //  Insere novos elementos no início de uma matriz e retorna o novo comprimento da matriz.
-   snake.unshift(newHead);
+  snake.unshift(newHead);
 }
 
 let jogo = setInterval(iniciarJogo, 100);
