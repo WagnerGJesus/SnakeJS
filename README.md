@@ -7,3 +7,5 @@ Criando o Jogo da Cobrinha com JavaScript
 - [x] definir direcoes e impedir que a cobrinha suma
 - [x] criar comidinha
 - [x] definir a aleatoriedade da frutinha e tamanho da cobrinha
+- [x] definir fim do jogo
+- [x] adicionar estilizacao ao body
